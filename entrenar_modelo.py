@@ -49,8 +49,8 @@ def construir_modelo(text_vectorizer, num_clases=3):
             output_dim=32,
             mask_zero=True
         ),
-        tf.keras.layers.LSTM(16, dropout=0.3, recurrent_dropout=0.3),
-        tf.keras.layers.Dense(32, activation='relu'),
+        tf.keras.layers.LSTM(256, dropout=0.3, recurrent_dropout=0.3),
+        tf.keras.layers.Dense(256, activation='relu'),
         tf.keras.layers.Dense(num_clases, activation='softmax')
     ])
     model.compile(loss='sparse_categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
